@@ -25,28 +25,23 @@ const Home = () => {
       </div>
       <Carousel
         plugins={[Autoplay({ delay: 2000 })]}
-        className="w-full max-w-xs"
+        className="w-full max-w-xs bg-gray-100 rounded-lg shadow-md"
       >
         <CarouselContent>
           {messages.map((message, index) => (
-            <CarouselItem key={index}>
+            <CarouselItem key={index} className="m-5 p-5 text-center">
               <Card>
-                <CardHeader>{message.title}</CardHeader>
-                <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <span className="text-lg font-semibold">
-                    {message.content}
-                  </span>
+                <CardHeader className="text-xl font-bold text-gray-700">
+                  {message.title}
+                </CardHeader>
+                <CardContent className="flex aspect-square items-center justify-center p-6 text-gray-600">
+                  {message.content}
                 </CardContent>
               </Card>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
       </Carousel>
-      <footer className="flex items-center justify-center w-full h-24 border-t">
-        Hello
-      </footer>
     </main>
   );
 };
